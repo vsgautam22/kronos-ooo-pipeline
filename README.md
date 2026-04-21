@@ -18,7 +18,7 @@ Unlike in-order pipelines, Kronos-32 dispatches instructions to reservation stat
 ---
 
 ## System Architecture
-
+```
 ┌──────────────────────────────────────────────┐
      │              FETCH STAGE                     │
      │   PC → imem[PC] → instruction register       │
@@ -51,6 +51,7 @@ Unlike in-order pipelines, Kronos-32 dispatches instructions to reservation stat
                │  15 entries, in-order      │
                │  commit + embedded RAT     │
                └───────────────────────────┘
+```
 
 ---
 
@@ -86,11 +87,13 @@ Unlike in-order pipelines, Kronos-32 dispatches instructions to reservation stat
 
 All instructions are 32-bit fixed width, big-endian field layout:
 
-31      28 27    24 23    20 19    16 15              0
-┌────────┬────────┬────────┬────────┬────────────────┐
-│ opcode │   rd   │  rs1   │  rs2   │      imm       │
-│ [4b]   │ [4b]   │ [4b]   │ [4b]   │    [16b]       │
-└────────┴────────┴────────┴────────┴────────────────┘
+```
+ 31      28 27    24 23    20 19    16 15              0
+ ┌────────┬────────┬────────┬────────┬────────────────┐
+ │ opcode │   rd   │  rs1   │  rs2   │      imm       │
+ │ [4b]   │ [4b]   │ [4b]   │ [4b]   │    [16b]       │
+ └────────┴────────┴────────┴────────┴────────────────┘
+```
 
 | Opcode | Mnemonic | Operation | FU |
 |---|---|---|---|
@@ -117,6 +120,7 @@ All instructions are 32-bit fixed width, big-endian field layout:
 
 18-instruction program covering all hazard classes and functional units:
 
+```
 Address  Encoding   Assembly                          Notes
 ───────  ────────   ────────────────────────────────  ────────────────────────────
 0x00   11000005   ADDI  R1,  R0,  5                 R1 = 5
@@ -137,6 +141,7 @@ Address  Encoding   Assembly                          Notes
 0x0F   1f000002   ADDI  R15, R0,  2                 R15 = 2 (R13 ≠ R15)
 0x10   c0df0008   BEQ   R0,  R13, R15, +8           not taken (1 ≠ 2), fall through
 0x11   1f00004d   ADDI  R15, R0,  77                R15 = 77 ← proves branch not taken
+```
 
 ---
 
@@ -207,7 +212,7 @@ vvp sim/ooo_sim
 ---
 
 ## Repository Structure
-
+```
 kronos-ooo-pipeline/
 ├── rtl/
 │   ├── ooo_pkg.v        # Global parameters, opcode & FU defines
@@ -234,7 +239,7 @@ kronos-ooo-pipeline/
 ├── Makefile
 ├── LICENSE
 └── README.md
-
+```
 ---
 
 ## Tools & Environment
