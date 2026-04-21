@@ -1,0 +1,17 @@
+# Simulation outputs
+sim/ooo_sim
+sim/*.vcd
+
+# Synthesis outputs
+synth/*.json
+synth/*.blif
+synth/*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor
+.vscode/
+*.swp
+*~
