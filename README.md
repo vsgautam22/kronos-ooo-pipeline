@@ -278,4 +278,4 @@ Part of an FPGA/VLSI portfolio by **Gautam Suresh** (B.E. Electronics, VLSI Desi
 |---|---|---|
 | 1 | [CRC Engine](https://github.com/vsgautam22/crc-engine) | RTL + SymbiYosys formal verification + OpenLane GDS on SKY130A (0 DRC violations) |
 | 2 | [RISC-V RV32I Core](https://github.com/vsgautam22/riscv-core) | 5-stage in-order pipeline, full hazard handling, 14/14 tests passed |
-| 3 | **Kronos-32 OOO Engine** | Tomasulo OOO core, 4 FUs, ROB+RAT+CDB, 6/6 tests passed |
+| 3 | [Kronos-32 OOO Engine](https://github.com/vsgautam22/kronos-ooo-pipeline) | Tomasulo OOO core, 4 FUs, ROB+RAT+CDB, 6/6 tests passed |
